@@ -15,11 +15,7 @@ $isLike  = json_decode($data);
 $isLike = $isLike->entry[0]->changes[0]->value->item;
 
 if($isLike == 'like'){
-	$pageID = '216046745080249';
-	$accessToken = 'EAARqPYXrzbABAKaTqjjPhtdmrodyDa1u3QHcWf6rOCG3D8P7EaElBhEpalpZAI5nTNkt1tC7d63J0eq2RmDKTHfbwhu3TIZAXwQ4pTO4gx1n4lJfRMNQdmRFbRnDj1FdZBvjtTSxlumtxGJIU1htKQ1fSNILYUt5eUNKw2oZAgZDZD';
-
-
-	$url = 'https://graph.facebook.com/v3.2/'.$pageID.'?fields=fan_count&access_token='.$accessToken;
+	require_once ('variables.php');
 
 	$curl = curl_init();
 	curl_setopt($curl, CURLOPT_URL, $url);
