@@ -7,7 +7,6 @@ $(document).ready(function() {
     /*****************************************************************************************************************************************************/
 
     var fan_count = 0;
-    var fan_countCurrent = 0;;
 
     /*****************************************************************************************************************************************************/
     /* Get Initial Counter:
@@ -19,7 +18,7 @@ $(document).ready(function() {
     function getInitialCounter(){
         $.ajax({
             type: 'GET',
-            url: 'https://whykiki.rocks/likeCounter/likeCounter.json',
+            url: 'https://eure-domain.de/likeCounter.json',
             dataType: 'json',
             success: function (data) {
                 console.log(data.fan_count);
@@ -54,7 +53,7 @@ $(document).ready(function() {
     function getRealTimeLikes(){
         $.ajax({
             type: 'GET',
-            url: 'https://whykiki.rocks/likeCounter/likeCounter.json',
+            url: 'https://eure-domain.de/likeCounter.json',
             dataType: 'json',
             success: function (data) {
                 fanCounter = parseInt(data.fan_count);
@@ -106,7 +105,7 @@ $(document).ready(function() {
 
     function startIntervalCounting(){
         setInterval(function(){
-                url = 'https://whykiki.rocks/likeCounter/interval_likes.php';
+                url = 'https://eure-domain.de/interval_likes.php';
                 getIntervalLikes(url);
                 console.log(fan_count)
             },
